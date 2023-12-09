@@ -25,3 +25,13 @@ To kill the app
 kill -9 PID
 ```
 
+## Script
+Entering these commands manually can be annoying so I have made a script that you can run from any directory on the system as there is a link refering to it by the name `ui_run`
+
+So you can start the app by simply running
+```bash
+sudo ui_run
+```
+This will give you all the data you need to access the app (IP address and port). And when you want to kill the app simply press enter.
+
+![](imgs/script_demo.png)
