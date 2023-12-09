@@ -28,14 +28,4 @@ def index():
     return render_template("index.html")
 
     
-    # app.run(debug=True, host="0.0.0.0")
-
-    
-
-
-#    while not rp.is_shutdown():
-#       hello_str = f"hello at time {rp.get_time()}"
-#       rp.loginfo(hello_str)
-#       pub.publish(hello_str)
-#       sleep(0.5)
 
