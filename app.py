@@ -22,7 +22,10 @@ def index():
         max_linear = request.form.get("max_linear")
         max_rotation = request.form.get("max_angle")
         # Publish recieved values
-        publish_str = "linear is " + str(max_linear) + " and angle is " + str(max_rotation)
+        if max_linear == None and max_rotation == None:
+            publish_str = "STOP"
+        else:
+            publish_str = "linear is " + str(max_linear) + " and angle is " + str(max_rotation)
         pub.publish(publish_str)
         rp.loginfo(publish_str)
     return render_template("index.html")
