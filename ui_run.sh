@@ -2,7 +2,7 @@
 
 # Exit immediately if any error happens
 set -e
-cd /gp/gp_ws/src/torta_pkg/scripts/
+#cd /gp/gp_ws/src/torta_pkg/scripts/
 flask run --no-reload -h 0.0.0.0 &
 # get IP address
 my_ip="$(ifconfig enp0s3 |grep "inet " | awk '{print $2}')"
