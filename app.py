@@ -21,16 +21,16 @@ def index():
         y = request.form.get("y")
         theta = request.form.get("theta")
         try:
-            x = int(x)
+            x = float(x)
         except:
             x = 0
 
         try:
-            y = int(y)
+            y = float(y)
         except:
             y = 0
         try:
-            theta = int(theta)
+            theta = float(theta)
         except:
             theta = 0
 
