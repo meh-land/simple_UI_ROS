@@ -1,16 +1,25 @@
 #!/usr/bin/env python3
-import sys
-import rospy as rp
+import rospy
 from std_msgs.msg import String
-from time import sleep
-# Initialize ros node
-rp.init_node("web_pub")
-rp.loginfo("hello from web_pub")
-# Create publisher
-pub = rp.Publisher("/cmd_button", String, queue_size=10)
+import sys
 
-#sleep(60)
-args = sys.argv
-msg = args[1]
-pub.publish(msg)
-rp.loginfo(msg)
+def talker():
+    pub = rospy.Publisher("cmd_button", String, queue_size=10)
+    rospy.init_node("button_pub", anonymous=True)
+#    rate = rospy.Rate(10) # 10hz
+    c = 0
+    my_arg = sys.argv[1]
+    rospy.loginfo(my_arg)
+    pub.publish(my_arg)
+#    while not rospy.is_shutdown():
+#        c += 1
+#        my_msg = my_arg + str(c)
+#        rospy.loginfo(my_msg)
+#        pub.publish(my_msg)
+#        rate.sleep()
+
+if __name__ == '__main__':
+    try:
+        talker()
+    except rospy.ROSInterruptException:
+        pass
